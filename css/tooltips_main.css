@@ -1,0 +1,207 @@
+
+
+/* --- Base --- */
+.qlabs_tooltip_top
+
+	{
+	position: relative !important;
+	display: inline-block !important;
+	text-decoration: none !important;
+	}
+	
+/* --- Container --- */
+.qlabs_tooltip_top span
+	{
+	min-width: 180px; /* Tooltip Width */
+	font-family: arial, sans-serif !important; /* Tooltip Base Font Family */
+	font-size: 13px !important; /* Tooltip Base Font Size */
+	line-height: normal !important;
+	text-align: left !important;
+	padding: 10px 10px 12px 10px !important;
+	visibility: hidden;
+    opacity: 0;
+	position: absolute;
+	z-index: 1000;
+
+	/* CSS3 Transitions */
+	-webkit-transition-duration: 0.25s;
+	-moz-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+	-ms-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-webkit-transition-timing-function: cubic-bezier(0.35,0,0.35,1);
+	-moz-transition-timing-function: cubic-bezier(0.35,0,0.35,1);
+	-o-transition-timing-function: cubic-bezier(0.35,0,0.35,1);
+	-ms-transition-timing-function: cubic-bezier(0.35,0,0.35,1);
+	transition-timing-function: cubic-bezier(0.35,0,0.35,1);
+	}
+
+/* --- Arrow --- */	
+.qlabs_tooltip_top span:before
+	{
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	}
+
+/* --- Header --- */
+.qlabs_tooltip_top span strong
+	{
+	width: 100%;
+	padding: 8px 10px 8px 10px;
+	display: block;
+	position: relative;
+	left: -10px;
+	top: -10px;
+	
+	/* CSS3 Borders */
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	-webkit-border-radius: 4px 4px 0px 0px;
+	border-radius: 4px 4px 0px 0px;
+	}
+
+/* --- Iframe & Images --- */		
+.qlabs_tooltip_top span img,
+.qlabs_tooltip_top span iframe
+	{
+	margin: 0px 0px 10px 0px !important;
+	border: 5px solid #ffffff !important;
+	float: left !important;
+	}
+	
+/* --- Paragraph --- */
+p.qlabs_tooltip_top
+	{
+	display: block !important;
+	}
+	
+p.qlabs_tooltip_top:hover
+	{
+	background: #ffecb1;
+	
+	/* CSS3 Transitions */
+	-webkit-transition: background 0.25s cubic-bezier(0.35,0,0.35,1);
+	-moz-transition: background 0.25s cubic-bezier(0.35,0,0.35,1);
+	-o-transition: background 0.25s cubic-bezier(0.35,0,0.35,1);
+	-ms-transition: background 0.25s cubic-bezier(0.35,0,0.35,1);
+	transition: background 0.25s cubic-bezier(0.35,0,0.35,1);
+	}
+	
+/* --- Optional Delay --- */
+/* --- 700ms --- */
+.delay_700.qlabs_tooltip_top span
+	{
+	/* CSS3 Transitions */
+	transition-delay: 700ms;
+	-moz-transition-delay: 700ms;
+	-webkit-transition-delay: 700ms;
+	-o-transition-delay: 700ms;
+	}
+
+/* =========================================================================================== */
+/* ========================================== TOP ============================================ */
+/* =========================================================================================== */
+
+/* --- Container --- */
+.qlabs_tooltip_top span
+	{
+	left: -10px;
+	bottom: 100%;
+	width:620px;
+	margin-bottom: 30px; /* Start Position */
+	
+	/* CSS3 Transitions */
+	-webkit-transition-property: opacity, margin-bottom, visibility;
+	-moz-transition-property: opacity, margin-bottom, visibility;
+	-o-transition-property: opacity, margin-bottom, visibility;
+	-ms-transition-property: opacity, margin-bottom, visibility;
+	transition-property: opacity, margin-bottom, visibility;
+	}
+	
+/* --- Arrow --- */	
+.qlabs_tooltip_top span:before
+	{
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+	border-top: 8px solid #000;
+	border-bottom: 0 !important;
+	bottom: -8px;
+	left: 15px;
+	}
+
+
+
+
+.qlabs_tooltip_style_38 span
+	{
+	color: #555555 !important;
+	background: #ffffff;
+	border: 5px solid #666666; /* IE */
+	border: 5px solid rgba(0,0,0,0.6);
+	width: 100%;
+
+	border-radius: 4px;
+	}
+
+/* --- Arrow --- */	
+.qlabs_tooltip_style_38 span:before
+	{
+	border-color: #666666; /* IE */
+	border-color: rgba(0,0,0,0.6);
+	}
+
+.qlabs_tooltip_top.qlabs_tooltip_style_38 span:before
+	{
+	bottom: -13px;
+	}
+
+	
+/* --- Decorative Line --- */
+.qlabs_tooltip_style_38 span:after
+	{
+	content: "";
+	display: block;
+	border-top: 1px solid rgba(255,255,255,1);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 10px;
+	
+	/* CSS3 Borders */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+	
+/* --- Header --- */
+.qlabs_tooltip_style_38 span strong
+	{
+	color: #000000;
+	
+	/* CSS3 Text-shadow */
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.8);
+	
+	/* CSS3 Gradients */
+	background: #efefef; /* Old browsers */
+	background: -moz-linear-gradient(top,  #efefef 0%, #e9e9e9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#e9e9e9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #efefef 0%,#e9e9e9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #efefef 0%,#e9e9e9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #efefef 0%,#e9e9e9 100%); /* IE10+ */
+	background: linear-gradient(top,  #efefef 0%,#e9e9e9 100%); /* W3C */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#e9e9e9',GradientType=0 ); IE6-9 - disabled due to lack of compatibility with pseudo-elements */
+
+	border-bottom: 1px solid #cdcdcd;
+	
+	/* CSS3 Borders */
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+	}
+	
