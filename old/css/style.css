@@ -1080,7 +1080,7 @@ code {
     display: flex;
     overflow-x: auto;              /* Enables horizontal scrolling */
     scroll-snap-type: x mandatory; /* The "Magnet" effect for snapping */
-    height: 30rem;                 /* Adjust height as needed */
+    height: 400px;                 /* Adjust height as needed */
     width: 100%;
     
     /* Hide the scrollbar for a cleaner look */
@@ -2026,9 +2026,18 @@ ul.our-photos-widget li a img:active {
     overflow: hidden;
 }
 .slide-img-holder-1 {
-    width: 100%;
-    height: auto;
+    margin: 0px 0 0 0;
+	border: 1px solid #666;
+	margin-right:15px;
+	margin-bottom:15px;
+	padding:3px;
+    height: 223px;
+    width: 250px;
+    float: left;
     overflow: hidden;
+	border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 .slide-img-holder-1 img{
 	 background-color: #000;
