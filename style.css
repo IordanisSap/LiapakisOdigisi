@@ -1,6 +1,7 @@
 /* --- Global Smooth Scroll --- */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 25px;
 }
 
 
@@ -18,7 +19,7 @@ html {
     height: 100vh;
     width: 300px; /* Fixed width looks great on PC and Mobile */
     position: fixed;
-    z-index: 1000; /* Stays on top of everything */
+    z-index: 1002; /* Stays on top of everything */
     top: 0;
     left: -300px; /* Hidden off-screen to the left */
     background-color: #fff;
@@ -80,7 +81,7 @@ html {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 999; /* Right below the menu */
+    z-index: 1001; /* Right below the menu */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -136,6 +137,35 @@ header {
 .logo-img {
     max-height: 50px;
 }
+
+/* Header animation */
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+/* New class for the exit animation */
+header.sticky-hide {
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+
 
 /* --- Hero Carousel Styles --- */
 .carousel-container {
@@ -213,12 +243,18 @@ header {
 
 /* --- Values Bar Styles --- */
 .values-bar {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.values-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 45px 20%;
-        background-color: #f8f9fa;
-
+    max-width: 1200px;
+    width: 100%;
 }
 
 .value-item {
@@ -242,9 +278,12 @@ header {
 /* Mobile Responsive tweak for values */
 @media (max-width: 768px) {
     .values-bar {
-        flex-direction: column;
-        gap: 12px;
         padding: 25px;
+    }
+
+    .values-container {
+        gap: 12px;
+        flex-direction: column;
     }
 
     .value-item {

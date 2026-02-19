@@ -85,3 +85,42 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
+
+
+
+// Header animation
+const headerElement = document.querySelector('header');
+const scrollThreshold = 520;
+let isSticky = false; // Keep track of the header's current state
+
+window.addEventListener('scroll', () => {
+    // If we scroll down past the threshold and it's not already sticky...
+    if (window.scrollY > scrollThreshold && !isSticky) {
+        isSticky = true;
+        
+        // Remove the hide animation if it's there, and add the sticky class
+        headerElement.classList.remove('sticky-hide');
+        headerElement.classList.add('sticky');
+        
+        // Add padding to prevent layout glitch
+        document.body.style.paddingTop = headerElement.offsetHeight + 'px';
+        
+    } 
+    // If we scroll back up past the threshold and it IS currently sticky...
+    else if (window.scrollY <= scrollThreshold && isSticky) {
+        isSticky = false;
+        
+        // Trigger the slide-up exit animation
+        headerElement.classList.add('sticky-hide');
+        
+        // Wait for the 400ms animation to finish before resetting the layout
+        setTimeout(() => {
+            // Double-check we haven't scrolled back down in the last 400ms
+            if (!isSticky) {
+                headerElement.classList.remove('sticky');
+                headerElement.classList.remove('sticky-hide');
+                document.body.style.paddingTop = '0px';
+            }
+        }, 400);
+    }
+});
