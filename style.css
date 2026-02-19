@@ -1,0 +1,554 @@
+/* --- Global Smooth Scroll --- */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+/* --- Side Menu Styles --- */
+.side-menu {
+    height: 100vh;
+    width: 300px; /* Fixed width looks great on PC and Mobile */
+    position: fixed;
+    z-index: 1000; /* Stays on top of everything */
+    top: 0;
+    left: -300px; /* Hidden off-screen to the left */
+    background-color: #fff;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.side-menu.open {
+    left: 0; /* Slides in */
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #28a745;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 20px 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #28a745;
+    background-color: #f8f9fa;
+}
+
+/* Dark Overlay behind the menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999; /* Right below the menu */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Scroll Fade-In Animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px); /* Starts slightly lower down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform; /* Helps the browser optimize the animation */
+}
+
+/* The class added by JavaScript when the element is visible */
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0); /* Moves to its original position */
+}
+
+
+/* --- Header Styles --- */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 70px;
+    position: relative;
+    z-index: 10;
+}
+
+.hamburger {
+    width: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 20px;
+    user-select: none;
+}
+
+.logo-container {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 50px;
+}
+
+/* --- Hero Carousel Styles --- */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    /* Transition is handled in JS */
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Text Styling */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+    text-align: center;
+}
+
+
+
+.hero-text h1 {
+    font-size: 2rem;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+}
+
+/* Mobile Responsive tweak for values */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        margin-bottom: 5px;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* --- Values Bar Styles --- */
+.values-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 20%;
+        background-color: #f8f9fa;
+
+}
+
+.value-item {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.tick-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+
+/* Mobile Responsive tweak for values */
+@media (max-width: 768px) {
+    .values-bar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 25px;
+    }
+
+    .value-item {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+
+
+
+.info-section {
+    padding: 20px 20px;
+    /* Generous spacing top/bottom */
+    background-color: #fff;
+    /* White background to contrast with the grey bar above */
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    max-width: 1200px;
+    /* Keeps text from getting too wide on huge screens */
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    /* Space between the two columns */
+}
+
+.info-box {
+    flex: 1;
+    /* Makes both boxes equal width */
+}
+
+.info-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+    /* Stylish accent matching your previous green ticks */
+    border-left: 4px solid #28a745;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-box p {
+    font-size: 1.0rem;
+    line-height: 1.6;
+    /* Improves readability */
+    color: #555;
+    /* Slightly softer black for body text */
+    text-align: justify;
+    /* Makes the block look neat */
+}
+
+/* Mobile Responsive: Stack them vertically */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+/* --- Licenses Section Styles --- */
+.licenses-section {
+    padding: 60px 20px;
+    /* Light background to alternate with white */
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Reusing the stylish header look */
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    color: #333;
+    border-left: 5px solid #28a745;
+    /* Green accent */
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.licenses-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Individual Card Styling */
+.license-card {
+    flex: 1;
+    /* Makes all 3 cards equal width */
+    height: 300px;
+    /* Fixed height for uniformity */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Keeps overlay inside rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.license-card:hover {
+    transform: translateY(-5px);
+    /* Subtle lift effect on hover */
+}
+
+/* Dark Overlay for Text Readability */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darkens the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+/* Make overlay slightly darker on hover for focus */
+.license-card:hover .card-overlay {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.card-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #28a745;
+    /* Small green underline */
+    padding-bottom: 5px;
+}
+
+.card-overlay p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Mobile Responsive: Stack vertical */
+@media (max-width: 768px) {
+    .licenses-grid {
+        flex-direction: column;
+    }
+
+    .license-card {
+        flex: auto;
+        width: 100%;
+        /* Full width on phone */
+        height: 250px;
+        /* Slightly shorter on phone */
+    }
+}
+
+
+
+.insurances-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.contactus-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+/* Green outline when user clicks on an input */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+}
+
+
+
+
+/* --- Footer Styles --- */
+.site-footer {
+    background-color: #222; /* Dark background to anchor the layout */
+    color: #ccc; /* Light grey text */
+    padding: 40px 20px;
+    border-top: 5px solid #28a745; /* Green accent line matching your headers */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows safe wrapping on very small screens */
+    gap: 20px;
+}
+
+.footer-info h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: #28a745; /* Turns green on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
