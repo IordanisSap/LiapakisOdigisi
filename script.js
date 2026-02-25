@@ -30,8 +30,7 @@ function nextSlide() {
     }, { once: true });
 }
 
-// Run every 5 seconds
-setInterval(nextSlide, 7000);
+setInterval(nextSlide, 68000);
 
 
 
