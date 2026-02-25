@@ -41,12 +41,12 @@ html {
     right: 25px;
     font-size: 40px;
     cursor: pointer;
-    color: #B22222;
+    color: #8A1015;
     line-height: 1;
 }
 
 .close-btn:hover {
-    color: #FF0000;
+    color: #eb1c24;
 }
 
 .nav-links {
@@ -62,7 +62,7 @@ html {
 .nav-links a {
     text-decoration: none;
     font-size: 1.1rem;
-    color: #B22222;
+    color: #8A1015;
     font-weight: bold;
     display: block;
     padding: 20px 30px;
@@ -70,7 +70,7 @@ html {
 }
 
 .nav-links a:hover {
-    color: #FF0000;
+    color: #eb1c24;
     background-color: #f8f9fa;
 }
 
@@ -126,6 +126,7 @@ header {
     font-size: 30px;
     margin-right: 20px;
     user-select: none;
+    color: #eb1c24;
 }
 
 .logo-container {
@@ -261,7 +262,7 @@ header.sticky-hide {
 .value-item {
     font-size: 1.6rem;
     font-weight: bold;
-    color: #B22222;
+    color: #8A1015;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -273,6 +274,7 @@ header.sticky-hide {
     height: 24px;
     margin-right: 6px;
     vertical-align: middle;
+    color: #eb1c24;
 }
 
 
@@ -290,7 +292,7 @@ header.sticky-hide {
     .value-item {
         font-size: 1.2rem;
         font-weight: bold;
-        color: #B22222;
+        color: #8A1015;
         display: flex;
         align-items: center;
         gap: 5px;
@@ -326,9 +328,9 @@ header.sticky-hide {
 .info-box h3 {
     font-size: 1.6rem;
     margin-bottom: 15px;
-    color: #B22222;
+    color: #8A1015;
     /* Stylish accent matching your previous green ticks */
-    border-left: 4px solid #FF0000;
+    border-left: 4px solid #eb1c24;
     padding-left: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -370,8 +372,8 @@ header.sticky-hide {
 .section-title {
     font-size: 1.6rem;
     margin-bottom: 30px;
-    color: #B22222;
-    border-left: 5px solid #FF0000;
+    color: #8A1015;
+    border-left: 5px solid #eb1c24;
     /* Green accent */
     padding-left: 15px;
     text-transform: uppercase;
@@ -433,7 +435,7 @@ header.sticky-hide {
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
-    border-bottom: 2px solid #FF0000;
+    border-bottom: 2px solid #eb1c24;
     /* Small green underline */
     padding-bottom: 5px;
 }
@@ -488,7 +490,7 @@ header.sticky-hide {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #B22222;
+    color: #8A1015;
 }
 
 .form-group input,
@@ -505,13 +507,13 @@ header.sticky-hide {
 /* Green outline when user clicks on an input */
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #FF0000;
+    border-color: #eb1c24;
     outline: none;
 }
 
 /* Submit Button */
 .submit-btn {
-    background-color: #FF0000;
+    background-color: #8A1015;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -524,7 +526,8 @@ header.sticky-hide {
 }
 
 .submit-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #eb1c24; /* Darker green on hover */
+
 }
 
 /* Mobile Responsive */
@@ -539,10 +542,9 @@ header.sticky-hide {
 
 /* --- Footer Styles --- */
 .site-footer {
-    background-color: #222; /* Dark background to anchor the layout */
-    color: #ccc; /* Light grey text */
+    background-color: #222;
+    color: #ccc;
     padding: 40px 20px;
-    border-top: 5px solid #FF0000; /* Green accent line matching your headers */
 }
 
 .footer-container {
@@ -581,7 +583,7 @@ header.sticky-hide {
 }
 
 .social-link:hover {
-    color: #FF0000; /* Turns green on hover */
+    color: #eb1c24; /* Turns green on hover */
     transform: translateY(-4px); /* Slight lift effect */
 }
 
