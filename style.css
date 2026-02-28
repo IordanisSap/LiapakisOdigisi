@@ -376,7 +376,7 @@ header.sticky-hide {
 
 /* --- Licenses Section Styles --- */
 .licenses-section {
-    padding: 60px 20px;
+    padding: 30px 20px;
     /* Light background to alternate with white */
     display: flex;
     justify-content: center;
@@ -483,14 +483,14 @@ header.sticky-hide {
 
 
 .insurances-section {
-    padding: 60px 20px;
+    padding: 30px 20px;
     display: flex;
     justify-content: center;
 }
 
 
 .contactus-section {
-    padding: 60px 20px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     background-color: #333;
