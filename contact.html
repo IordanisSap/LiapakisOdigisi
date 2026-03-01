@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Iordanis Sapidis">
+    <link rel="author" href="https://github.com/IordanisSap">
+    <meta name="owner" content="Nikos Liapakis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Σχολή οδηγών - Λιαπάκης Νίκος - Ηράκλειο Κρήτης</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/components.js" defer></script>
+    <script src="js/fade.js" defer></script>
+</head>
+
+<body style="background-color: #333;">
+    <site-header></site-header>
+    <section class="contactus-section fade-in">
+        <div class="container contact-form-container">
+            <h3 class="section-title" style="color: white;">ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h3>
+            <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" class="contact-form">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Το email σας" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Τηλέφωνο</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Το τηλέφωνό σας">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Μήνυμα</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Γράψτε το μήνυμά σας εδώ και θα επικοινωνήσουμε μαζί σας"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Αποστολή Μηνύματος</button>
+            </form>
+        </div>
+    </section>
+    <section class="contactus-section fade-in">
+        <div class="container contactus-container">
+            <div style="flex: 1;">
+                <h3 class="section-title" style="color: white;">ΠΟΥ ΘΑ ΜΑΣ ΒΡΕΙΤΕ</h3>
+                <div class="contact-info">
+                    <ul>
+                        <li>
+                            <a href="mailto:liapakis@hotmail.com">
+                                <i class="fa-solid fa-envelope"></i> <span>smartdrive.nikos@gmail.com</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://maps.app.goo.gl/ZzfK23hhceLAdyB76" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-solid fa-location-dot"></i> <span>Λεωφ. Δημοκρατίας 15, Ηράκλειο
+                                    Κρήτης</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tel:+306937100935">
+                                <i class="fa-solid fa-phone"></i> <span>6937100935</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="viber://chat?number=+306937100935">
+                                <i class="fa-brands fa-viber"></i> <span>Βρείτε μας στο Viber</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://maps.google.com/maps?q=Liapakis+Driving+School+Heraklion&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <site-footer></site-footer>
+</body>
+
+</html>
