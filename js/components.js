@@ -8,7 +8,7 @@ class SiteHeader extends HTMLElement {
                 <ul class="nav-links">
                     <li><a href="index.html#">ΑΡΧΙΚΗ</a></li>
                     <li><a href="licenses.html#">ΑΔΕΙΕΣ ΟΔΗΓΗΣΗΣ</a></li>
-                    <li><a href="index.html#insurances">ΑΣΦΑΛΕΙΕΣ ΟΧΗΜΑΤΩΝ</a></li>
+                    <li><a href="insurances.html#">ΑΣΦΑΛΕΙΕΣ ΟΧΗΜΑΤΩΝ</a></li>
                     <li><a href="services.html">ΥΠΗΡΕΣΙΕΣ</a></li>
                     <li><a href="contact.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
                 </ul>
