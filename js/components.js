@@ -7,7 +7,7 @@ class SiteHeader extends HTMLElement {
                 <div class="close-btn" id="close-btn">&times;</div>
                 <ul class="nav-links">
                     <li><a href="index.html#">ΑΡΧΙΚΗ</a></li>
-                    <li><a href="index.html#licenses">ΑΔΕΙΕΣ ΟΔΗΓΗΣΗΣ</a></li>
+                    <li><a href="licenses.html#">ΑΔΕΙΕΣ ΟΔΗΓΗΣΗΣ</a></li>
                     <li><a href="index.html#insurances">ΑΣΦΑΛΕΙΕΣ ΟΧΗΜΑΤΩΝ</a></li>
                     <li><a href="services.html">ΥΠΗΡΕΣΙΕΣ</a></li>
                     <li><a href="contact.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
