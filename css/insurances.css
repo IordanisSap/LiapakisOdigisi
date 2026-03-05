@@ -1,7 +1,8 @@
 .insurance-intro {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #ddd;
+    margin-top: 20px;
 }
 
 .insurance-outro {
@@ -12,4 +13,35 @@
 
 .info-box p {
     margin-top: 10px;
+}
+
+
+.insurance-partners {
+    text-align: center;
+}
+
+.partners-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.partners-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Optional: Adds the same subtle hover float effect as your service cards */
+.partners-img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }

@@ -216,7 +216,8 @@ header.sticky-hide {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: blur(0.5px);
+    filter: blur(1px);
+    transition: filter 0.3s ease;
 }
 
 /* Dark Overlay */
@@ -228,7 +229,10 @@ header.sticky-hide {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
+    transition: background 0.3s ease;
 }
+
+
 
 /* Text Styling */
 .hero-text {
@@ -240,9 +244,20 @@ header.sticky-hide {
     z-index: 2;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
 }
 
+.slide:hover img {
+    filter: blur(0);
+}
 
+.slide:hover .overlay {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+.slide:hover .hero-text {
+    opacity: 0;
+}
 
 .hero-text h1 {
     font-size: 3.3rem;
