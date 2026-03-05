@@ -196,7 +196,7 @@ header.sticky-hide {
 .carousel-container {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     overflow: hidden;
 }
 
@@ -216,7 +216,7 @@ header.sticky-hide {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: blur(2.5px);
+    filter: blur(0.5px);
 }
 
 /* Dark Overlay */
@@ -226,7 +226,7 @@ header.sticky-hide {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -239,7 +239,6 @@ header.sticky-hide {
     color: white;
     z-index: 2;
     text-align: center;
-
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -257,7 +256,7 @@ header.sticky-hide {
 /* Mobile Responsive tweak for values */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 50vh;
+        height: 39vh;
     }
 
     .hero-text h1 {
