@@ -281,6 +281,14 @@ header.sticky-hide {
     .hero-text p {
         font-size: 1.4rem;
     }
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: blur(0.5px);
+        transition: filter 0.3s ease;
+    }
 }
 
 
