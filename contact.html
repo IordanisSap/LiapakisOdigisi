@@ -79,7 +79,7 @@
     <section class="contactus-section fade-in">
         <div class="container contact-form-container">
             <h3 class="section-title" style="color: white;">ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</h3>
-            <form id="contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" class="contact-form">
+            <form id="contact-form" method="POST" class="contact-form">
 
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -88,7 +88,7 @@
 
                 <div class="form-group">
                     <label for="phone">Τηλέφωνο</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Το τηλέφωνό σας" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Το τηλέφωνό σας" pattern="[0-9]{10}" title="Παρακαλώ εισάγετε 10 ψηφία" required>
                 </div>
 
                 <div class="form-group">
